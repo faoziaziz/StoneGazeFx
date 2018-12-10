@@ -1,7 +1,9 @@
 /*
-*   Namafile : App.java
+*   Namafile    : App.java
 *   Description : Saya mengerti bahwa ini merupakan program yang sulit
+*
 * */
+
 package com.herokuapp.faoziaziz;
 
 import com.herokuapp.faoziaziz.frontend.MainInterface;

@@ -38,8 +38,12 @@ public class MainInterface {
         this.frame.pack();
         this.frame.setVisible(true);
     }
-    
+
     private void setPanelAtas(){
+        JPanel PanelAtas = new JPanel();
+        JButton TombolAtas = new JButton("Tombol Atas 1");
+        PanelAtas.add(TombolAtas);
+        this.contentPane.add(PanelAtas, BorderLayout.NORTH);
 
     }
 
@@ -59,14 +63,26 @@ public class MainInterface {
     }
 
     private void setPanelKanan(){
-
+        JPanel PanelKanan = new JPanel();
+        JButton TombolKanan1  = new JButton("Buttton Kanan 1");
+        JButton TombolKanan2 = new JButton("Button Kanan 2");
+        PanelKanan.add(TombolKanan1);
+        this.contentPane.add(PanelKanan, BorderLayout.EAST);
     }
 
     private void setPanelTengah(){
+        JPanel PanelTengah = new JPanel();
+        JButton TombolTengah = new JButton("Tombol Tengah");
+        PanelTengah.add(TombolTengah);
+        this.contentPane.add(PanelTengah, BorderLayout.CENTER);
 
     }
 
     private void setPanelBawah(){
+        JPanel PanelBawah = new JPanel();
+        JButton TombolBawah = new JButton("Tombol Bawah");
+        PanelBawah.add(TombolBawah);
+        this.contentPane.add(PanelBawah, BorderLayout.SOUTH);
 
     }
 

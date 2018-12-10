@@ -1,8 +1,10 @@
 /*
-*   Namafile : KalSim.java
+*   Namafile    : KalSim.java
 *   Deskripsi   : File ini dipakai untuk mengolah secara matematis
-*                   persamaan yang mungkin akan dipakai dalam proses simulasi
+*                 persamaan yang mungkin akan dipakai dalam proses
+*                 simulasi.
 * */
+
 package com.herokuapp.faoziaziz.Math;
 
 public class KalSim {
