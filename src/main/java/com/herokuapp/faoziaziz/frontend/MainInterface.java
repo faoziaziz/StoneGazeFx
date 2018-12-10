@@ -11,13 +11,19 @@ public class MainInterface{
 
 
     public MainInterface() {
-        initFrame();
+        FrameUtama();
 
     }
 
-    public void initFrame(){
+    public void FrameUtama(){
+
+        /*
+        *   Settingan awal frame Utama
+        *
+        * */
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame myWindow = new JFrame();
+        myWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myWindow.setTitle("Jendela Program");
         myWindow.setSize(400, 200);
         myWindow.setVisible(true);
