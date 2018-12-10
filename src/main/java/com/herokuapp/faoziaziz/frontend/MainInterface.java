@@ -1,12 +1,11 @@
-package com.herokuapp.faoziaziz;
-
+package com.herokuapp.faoziaziz.frontend;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class App extends Application {
+public class MainInterface extends Application {
 
     @Override
     public void start(Stage stage) {
@@ -18,7 +17,8 @@ public class App extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public MainInterface() {
         launch();
     }
+
 }

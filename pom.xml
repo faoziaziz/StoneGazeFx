@@ -20,6 +20,12 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <dependency>
+    	<groupId>org.wildfly.swarm</groupId>
+    	<artifactId>javafx-runtime</artifactId>
+    	<version>1.0.2.Final</version>
+	</dependency>
 
     <dependency>
       <groupId>org.openjfx</groupId>
@@ -29,38 +35,31 @@
 
   </dependencies>
  
-  <build>
-	<!-- yang diedit bagian build doang yah guys-->
-	<plugins>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
- 
- 		<configuration>
-    		<archive>
-      		<manifest>
-        	<!--
-			<mainClass>com.labseni.app.App</mainClass>
-			<mainClass>com.labseni.app.Algoritma.Optimasi</mainClass>
-		-->
-			<mainClass>com.herokuapp.faoziaziz.App</mainClass>
-			
-      		</manifest>
-    		</archive>
-    		<descriptorRefs>
-      			<descriptorRef>jar-with-dependencies</descriptorRef>
-    			</descriptorRefs>
-  		</configuration>
-
-  		<executions>
-    		<execution>
-      		  <id>make-assembly</id> <!-- this is used for inheritance merges -->
-      		  <phase>package</phase> <!-- bind to the packaging phase -->
-    		  <goals>
-    		    <goal>single</goal>
-    		  </goals>
-    		</execution>
-  		</executions>
-            </plugin> 
-        </plugins>
+ <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <release>11</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <mainClass>com.herokuapp.faoziaziz.App</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
