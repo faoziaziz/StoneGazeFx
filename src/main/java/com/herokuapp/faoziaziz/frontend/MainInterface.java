@@ -1,24 +1,26 @@
 package com.herokuapp.faoziaziz.frontend;
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 
-public class MainInterface extends Application {
+import javax.swing.*;
 
-    @Override
-    public void start(Stage stage) {
-        String javaVersion = System.getProperty("java.version");
-        String javafxVersion = System.getProperty("javafx.version");
-        Label l = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
-        Scene scene = new Scene(new StackPane(l), 640, 480);
-        stage.setScene(scene);
-        stage.show();
-    }
+public class MainInterface{
+    JToolBar barAlat= new JToolBar("ALat KU");
+    JPanel PanelKiri = new JPanel();
+    JPanel PanelTengah = new JPanel();
+    ImageIcon gambarIcon = new ImageIcon("./gambar/icon", "ini asik");
+    JMenuBar menuBar=new JMenuBar();
+
 
     public MainInterface() {
-        launch();
+        initFrame();
+
+    }
+
+    public void initFrame(){
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        JFrame myWindow = new JFrame();
+        myWindow.setTitle("Jendela Program");
+        myWindow.setSize(400, 200);
+        myWindow.setVisible(true);
     }
 
 }
