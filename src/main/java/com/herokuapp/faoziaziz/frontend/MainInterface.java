@@ -3,6 +3,7 @@
 *   Description : Ini class yang akan dipanggil sebagai user
 *                 interface utama.
 * */
+
 package com.herokuapp.faoziaziz.frontend;
 
 import javax.swing.*;
@@ -15,7 +16,6 @@ public class MainInterface {
 
     public MainInterface() {
         FrameUtama();
-
     }
 
     private void FrameUtama(){
@@ -40,10 +40,31 @@ public class MainInterface {
     }
 
     private void setPanelAtas(){
+
+        JToolBar toolBar = new JToolBar("Toolbar Ku");
+        Insets zeroInset=new Insets(0,0,0,0);
+        JButton newButton= new JButton("New");
+        newButton.setMargin(zeroInset);
+        newButton.setToolTipText("Add new policy");
+
+        JButton openButton = new JButton("Open");
+        openButton.setMargin(zeroInset);
+        openButton.setToolTipText("Open a policy");
+
+        JButton exitButton=new JButton("Exit");
+        exitButton.setMargin(zeroInset);
+        exitButton.setToolTipText("Exit the application");
+
         JPanel PanelAtas = new JPanel();
         JButton TombolAtas = new JButton("Tombol Atas 1");
-        PanelAtas.add(TombolAtas);
-        this.contentPane.add(PanelAtas, BorderLayout.NORTH);
+
+        toolBar.add(newButton);
+        toolBar.add(openButton);
+        toolBar.addSeparator();
+        toolBar.add(exitButton);
+        toolBar.setRollover(true);
+
+        this.contentPane.add(toolBar, BorderLayout.NORTH);
 
     }
 
@@ -63,6 +84,9 @@ public class MainInterface {
     }
 
     private void setPanelKanan(){
+        /*
+        *   Ini bagian untuk Panel Kanan
+        * */
         JPanel PanelKanan = new JPanel();
         JButton TombolKanan1  = new JButton("Buttton Kanan 1");
         JButton TombolKanan2 = new JButton("Button Kanan 2");
@@ -71,11 +95,14 @@ public class MainInterface {
     }
 
     private void setPanelTengah(){
+        /*
+        *   Ini bagian untuk Panel Tengah
+        * */
+
         JPanel PanelTengah = new JPanel();
         JButton TombolTengah = new JButton("Tombol Tengah");
         PanelTengah.add(TombolTengah);
         this.contentPane.add(PanelTengah, BorderLayout.CENTER);
-
     }
 
     private void setPanelBawah(){
@@ -83,7 +110,6 @@ public class MainInterface {
         JButton TombolBawah = new JButton("Tombol Bawah");
         PanelBawah.add(TombolBawah);
         this.contentPane.add(PanelBawah, BorderLayout.SOUTH);
-
     }
 
 }
