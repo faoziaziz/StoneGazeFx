@@ -1,43 +1,14 @@
 package com.herokuapp.faoziaziz.frontend;
 
-import javafx.application.Platform;
-import javafx.embed.swing.JFXPanel;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
 
-public class SwingFX {
-    private static void initAndShowGUI()
-    {
-        JFrame frame= new JFrame("Swing and JavaFX");
-        final JFXPanel fxPanel = new JFXPanel();
-        initFX(fxPanel);
-        frame.add(fxPanel);
-        frame.setSize(300, 200);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		/*Platform.runLater(new Runnable(){
-			@Override
-			public void run()
-			{
-				initFX(fxPanel);
-			}
-		});*/
-    }
-    private static void initFX(JFXPanel fxPanel)
-    {
-        Scene scene = createScene();
-        fxPanel.setScene(scene);
-    }
 
-    private static Scene createScene()
+public class Plot {
+
+    public static Scene createScene()
     {
 
         final NumberAxis xAxis= new NumberAxis();
@@ -66,10 +37,4 @@ public class SwingFX {
 
     }
 
-    public SwingFX()
-    {
-
-        initAndShowGUI();
-
-    }
 }
