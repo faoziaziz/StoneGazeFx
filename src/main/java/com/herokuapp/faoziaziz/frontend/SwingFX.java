@@ -1,43 +1,50 @@
-/*
-*   Nama File   : SimulaFX.java
-*   Deskripsi   : Ini dipakai buat nampilin dengan javaFx
-*
-* */
-
 package com.herokuapp.faoziaziz.frontend;
-import com.herokuapp.faoziaziz.frontend.MainInterface;
+
+import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
-import javax.swing.*;
-import java.awt.*;
-
-public class SimulaFX {
-
-    public void tampilSimula(){
-        MainInterface UtamaFace = new MainInterface();
+public class SwingFX {
+    private static void initAndShowGUI()
+    {
+        JFrame frame= new JFrame("Swing and JavaFX");
         final JFXPanel fxPanel = new JFXPanel();
-        JPanel PanelTengah = new JPanel();
-        initGraphics(fxPanel);
-        PanelTengah.add(fxPanel);
-        UtamaFace.contentPane.add(PanelTengah, BorderLayout.CENTER);
+        initFX(fxPanel);
+        frame.add(fxPanel);
+        frame.setSize(300, 200);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		/*Platform.runLater(new Runnable(){
+			@Override
+			public void run()
+			{
+				initFX(fxPanel);
+			}
+		});*/
     }
-
-    public static void initGraphics(JFXPanel fxPanel){
+    private static void initFX(JFXPanel fxPanel)
+    {
         Scene scene = createScene();
         fxPanel.setScene(scene);
     }
 
-    public static Scene createScene()
+    private static Scene createScene()
     {
+
         final NumberAxis xAxis= new NumberAxis();
         final NumberAxis yAxis= new NumberAxis();
         xAxis.setLabel("test");
         final LineChart<Number, Number> lineChart=new LineChart<Number, Number>(xAxis, yAxis);
-        lineChart.setTitle("Stil on Wix");
+        lineChart.setTitle("Fluktuasi Cinta");
         XYChart.Series series=new XYChart.Series();
         series.setName("Hasil Gue");
         // populating the series with data
@@ -56,6 +63,13 @@ public class SimulaFX {
         Scene scene = new Scene(lineChart, 800, 600);
         lineChart.getData().add(series);
         return(scene);
+
     }
 
+    public SwingFX()
+    {
+
+        initAndShowGUI();
+
+    }
 }

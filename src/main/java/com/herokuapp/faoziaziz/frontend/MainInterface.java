@@ -5,6 +5,7 @@
 * */
 
 package com.herokuapp.faoziaziz.frontend;
+import com.herokuapp.faoziaziz.frontend.SimulaFX;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,11 +15,7 @@ public class MainInterface {
     JFrame frame;
     Container contentPane ;
 
-    public MainInterface() {
-        FrameUtama();
-    }
-
-    private void FrameUtama(){
+    public void FrameUtama(){
 
         /*
         *   Settingan awal frame Utama
@@ -98,11 +95,7 @@ public class MainInterface {
         /*
         *   Ini bagian untuk Panel Tengah
         * */
-
-        JPanel PanelTengah = new JPanel();
-        JButton TombolTengah = new JButton("Tombol Tengah");
-        PanelTengah.add(TombolTengah);
-        this.contentPane.add(PanelTengah, BorderLayout.CENTER);
+        System.out.println("kai");
     }
 
     private void setPanelBawah(){
